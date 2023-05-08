@@ -1,24 +1,30 @@
-class MyClass:
-    def my_func(self):
-        print("Hello, world!")
-
 class player():
     def __init__(self, weapon):
-    # initialize player
-    # set weapon to false
-        self.weapon = False
+        self.weapon = weapon # initiates there is a weapon option
 
+    def get_weapon(self):
+        self.weapon = True # sets weapon to true when called
 
 class rooms(): 
-    # Starting room 
-    # 1. Describe the room to player
+    def weaponRoom():
+        weapon = player(False)
+        print ("You see the hilt of a blade lodged into a wall and try to pull it out.\n")
+
+        pick_up = input("Do you pick up the weapon? (y/n): ")
+        if pick_up == 'pick up':
+            weapon.get_weapon()
+            print("You pick up the weapon and now have a weapon!")
 
     def monsterRoom():
+        weapon = player(weapon)
         print ("As you enter the room you hear a grunt and eyes staring into your soul.\n ITS A MONSTER!" )
-
+        weapon 
         fight_flee = input("Do you 'fight' or 'flee'?\n")
-        if (fight_flee == 'fight' and player.weapon() == False):
+        if (fight_flee == 'fight' and  weapon.weapon == False):
             print ("YOU HAVE DIED")
+            quit()
+        elif (fight_flee == 'fight' and  weapon.weapon == True):
+            print ("YOU HAVE ESCAPED")
             quit()
 
 
