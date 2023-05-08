@@ -1,5 +1,9 @@
-class entrance():
+class startingRoom():
     # Starting room 
+
+    # 1. Describe the room to player
+    # 2. Ask player to decide which direction to go
+    # 3. Depending on choice move to the room (right or forward)
     pass
 
 class exitRoom():
