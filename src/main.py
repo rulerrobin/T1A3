@@ -1,7 +1,9 @@
 from rooms import rooms
 
+
 # Create instance of it
-rooms = rooms()
+
+game = rooms()
 
 # Main
 
@@ -13,7 +15,7 @@ game_state = input(f'{PLAYER_NAME} would you like to play? (y/n)\n')
 # 4. If yes change game to True 
 if game_state == 'y':
     while True:
-        rooms.createRoom()
+        game.createRoom()
 
  
 
