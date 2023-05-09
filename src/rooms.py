@@ -1,7 +1,8 @@
 class player():
-    def __init__(self, weapon):
-        self.weapon = False # initiates weapon and sets to False
-
+    def __init__(self, weapon=False):
+        # initiates weapon and sets to False
+        self.weapon = weapon if weapon is not None else False 
+        # Sets weapon to false if weapon is called and no argument is provided 
 
     def get_weapon(self):
         self.weapon = True # sets weapon to True when called
@@ -16,17 +17,23 @@ class rooms():
             print ("You see the hilt of a blade lodged into a wall")
 
             pick_up = input("Do you pick up the weapon? (y/n): ")
-            if pick_up == 'pick up':
+            if pick_up == 'y':
                 weapon.get_weapon()
                 print("You pick up the weapon and now have a weapon!")
-            skeletalRoom()
-        elif not weapon.weapon():
-            print ("It's just a dead end wall")
-            skeletalRoom()
+            rooms.skeletalRoom()
+        else:
+            print ("You see the hole where the blade used to be. Other that that, it's just a dead end wall")
+            rooms.skeletalRoom()
     
-    def skeletalRoom():
-        print
-        pass
+    def skeletalRoom(): # Skeletal room
+        choice = input ("Skeletal Room can choose 'forward' or 'left'")
+
+        if choice == 'forward':
+            print ("The door ahead opens into a dead end wall and go back to the previous room")
+            rooms.skeletalRoom()
+        if choice == 'left':
+            rooms.weaponRoom()
+
 
     def monsterRoom():
         weapon = player(weapon)
@@ -57,6 +64,8 @@ class rooms():
             rooms.scaryRoom()
         elif choice == "back":
             print ("You attempt to use the back door of the room but it opens into a dead end")
+        elif choice == "right":
+            rooms.skeletalRoom()
 
     # 2. Ask player to decide which direction to go
     # 3. Depending on choice move to the room (right or forward)
