@@ -1,4 +1,5 @@
 from rooms import rooms
+from rooms import player
 
 
 # Create instance of it
