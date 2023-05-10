@@ -17,15 +17,7 @@ game_state = input(f'{PLAYER_NAME} would you like to play? (y/n)\n')
 if game_state == 'y':
     while True:
         game.createRoom()
-
- 
-
-
-
-
-
-
-
+    
 
     # 4.1. Start loop
         # 4.1.a.If player dies ask to play again
