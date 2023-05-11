@@ -17,6 +17,7 @@ game_state = input(f'{PLAYER_NAME} would you like to play? (y/n)\n')
 if game_state == 'y':
     while True:
         game.createRoom()
+        break
     
 
     # 4.1. Start loop
