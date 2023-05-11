@@ -54,10 +54,17 @@ class rooms:
         fight_flee = input("Do you 'fight' or 'flee'?: ")
         if fight_flee == 'fight' and not self.player.weapon:
             print("YOU HAVE NO WEAPON AND DIED")
-            quit()
+            # quit()
+        elif fight_flee == 'flee' and not self.player.weapon:
+            print ("You escape the room and return to the previous location")
+            self.scaryRoom()
         elif fight_flee == 'fight' and self.player.weapon:
             print("YOU HAVE ESCAPED")
-            quit()
+            # quit()
+        elif fight_flee == 'flee' and self.player.weapon:
+            print ("You escape the room and return to the previous location")
+            self.scaryRoom()
+
 
     # Forward from Main Room
     def scaryRoom(self):
