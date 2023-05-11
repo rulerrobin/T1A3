@@ -81,27 +81,57 @@ class rooms:
             self.puzzleEscape()
 
 
-    def puzzleEscape():
-        user_input = input ("As you look closer at the door there is a puzzle requiring a series of numbers to be entered. ")
-        # check if input is a 8 digit number
-        if len(user_input) == 8 and user_input.isdigit():
-            # Check if player is correct
-            if user_input == random_number:
-                print('Congratulations, your guess is correct!')
+    def puzzleEscape(self):
+        attempts = 0
+        guessing = True
 
+        while guessing:
+
+            user_input = input ("As you look closer at the door there is a puzzle requiring a series of numbers to be entered. ")
+
+            # check if input is a 8 digit number
+            if len(user_input) == 8 and user_input.isdigit():
+                # Check if player is correct
+                if user_input == random_number:
+                    print('As soon as you enter the numbers doors begin to move and you escape the dungeon!')
+                    print ('End') # debug
+                    return
+
+                else:
+                    again = input('Sorry, your guess is incorrect. Try again? (y/n): ')
+                    if again.lower() == "n":
+                        print ('You hear something above you turning as you return to the center of the room')
+                        guessing = False
+                        self.puzzleRoom()
+                    elif again.lower() == "y":
+                        attempts += 1
+                        print(f"You have {3-attempts} attempts left.")
+
+                        if attempts == 2:
+                            break
+                        else:
+                            # reset guessing to True and prompt for input again
+                            guessing = True
+                    else:
+                        print("Invalid input. Please enter 'y' or 'n'.")
+                    
             else:
-                print('Sorry, your guess is incorrect. Try again.\n')
-        else:
-            print('Invalid input. Please enter an 8-digit number or an interactable command.\n')
+                print('Invalid input. Please enter an 8-digit number or an interactable command.\n')
 
-    def puzzleClue():
+        print ("The ceiling suddenly opens up and a spike trap comes hurtling down killing you.")
+
+
+    def puzzleClue(self):
         choice = input('You see a book that looks like it relates to the door on the right. Read it? (y/n): ')
         if choice == 'y':
         # Read the random number from the CSV file and provide the first digit as a clue
             with open('random_number.csv', mode='r') as file:
                 reader = csv.reader(file)
                 random_number = next(reader)[0]
-            print('A series of numbers is written over and over again, the number is: ', random_number)
+            print(f'A series of numbers is written over and over again, the number is: {random_number} you return to the center of the room.' )
+            self.puzzleRoom()
+        else:
+            print('You return to the center of the room')
 
     # MAIN ROOM 
     def createRoom(self):
