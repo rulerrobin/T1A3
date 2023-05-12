@@ -1,5 +1,6 @@
 from rooms import rooms, player
-
+from art import *
+from colorama import Fore, Back
 
 # Create instance of it
 
@@ -7,6 +8,10 @@ gaming = rooms()
 
 # Main
 
+art = text2art("T  1  A  3")
+print (art)
+print (Fore.RED)
+print (Back.GREEN)
 # 1. When player opens game welcome to the game
 # 2. Ask player for their name
 
