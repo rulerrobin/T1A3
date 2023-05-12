@@ -6,5 +6,10 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
+if [ -f "requirements.txt" ]
+then
+    pip3 install -r requirements.txt
+fi
+
 # Run main.py
 python3 main.py
