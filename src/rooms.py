@@ -1,5 +1,8 @@
 import csv
 import random
+from art import *
+
+death = text2art("YOU - HAVE - DIED!")
 
 # Global available variable since its just for reading through csv files
 random_number = str(random.randint(10000000, 99999999))
@@ -47,7 +50,7 @@ class rooms:
     def skeletalRoom(self):
         allowed_choices = ['forward', 'left', 'back'] #list of possible choices
         while True:
-            choice = input("You are in a room filled with skeletons do you go 'forward' or 'left' or 'back'? \n")
+            choice = input("You are in a room filled with skeletons do you go 'forward' or 'left' or 'back'?\n")
             if choice.lower() in allowed_choices:
                 break
             print("Invalid input, please use a valid option")
@@ -66,7 +69,7 @@ class rooms:
         while True:
             fight_flee = input("Do you 'fight' or 'flee'?\n")
             if fight_flee == 'fight' and not self.player.weapon:
-                print("YOU HAVE NO WEAPON AND DIED")
+                print(death)
                 quit() # on death quit
             elif fight_flee == 'flee' and not self.player.weapon:
                 print ("You escape the room and return to the previous location")
@@ -84,7 +87,7 @@ class rooms:
     # Forward from Main Room
     def scaryRoom(self):
         while True:
-            choice = input ("You are in scary room go 'right' 'left' or 'back'?\n ")
+            choice = input ("You are in scary room go 'right' 'left' or 'back'\n")
             if choice == 'right':
                 self.monsterRoom()
             elif choice == 'left': # Instant Death
@@ -117,7 +120,7 @@ class rooms:
         while guessing:
 
             print ("As you look closer at the door and you try to fill in a 8 digit code)")
-            user_input = input ("Enter an 8 digit number \n")
+            user_input = input ("Enter an 8 digit number\n")
             if len(user_input) == 8 and user_input.isdigit():
                 # Check if player is correct
                 if user_input == random_number:
@@ -146,6 +149,7 @@ class rooms:
             print("Invalid input. Please enter 'y' or 'n'.")
 
         print ("The ceiling suddenly opens up and a spike trap comes hurtling down killing you.")
+        print (death)
         quit() # on death quit
 
 
