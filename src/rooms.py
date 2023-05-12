@@ -4,7 +4,7 @@ from art import *
 
 death = text2art("YOU - HAVE - DIED!")
 
-# Global available variable since its just for reading through csv files
+# Global available variable for reading through csv file
 random_number = str(random.randint(10000000, 99999999))
 # write to file 
 with open('random_number.csv', mode='w', newline='') as file:
@@ -17,7 +17,7 @@ class player():
         self.weapon = weapon
 
     def get_weapon(self):
-        self.weapon = True # sets weapon to True when called
+        self.weapon = True          # sets weapon to True when called
 
 
 class rooms:
@@ -31,7 +31,7 @@ class rooms:
         if not self.player.weapon:
             print("You see the hilt of a blade lodged into a wall")
 
-            while True: # loop until a valid choice is made
+            while True:             # loop until a valid choice is made
                 pick_up = input("Do you pick up the weapon? (y/n)\n")
                 if pick_up.lower() == 'y':
                     self.player.get_weapon()
@@ -70,7 +70,7 @@ class rooms:
             fight_flee = input("Do you 'fight' or 'flee'?\n")
             if fight_flee == 'fight' and not self.player.weapon:
                 print(death)
-                quit() # on death quit
+                quit()          # on death quit
             elif fight_flee == 'flee' and not self.player.weapon:
                 print ("You escape the room and return to the previous location")
                 self.scaryRoom()
@@ -90,7 +90,7 @@ class rooms:
             choice = input ("You are in scary room go 'right' 'left' or 'back'\n")
             if choice == 'right':
                 self.monsterRoom()
-            elif choice == 'left': # Instant Death
+            elif choice == 'left':          # Instant Death
                 print("As you walk into the room you hear crumbling and all of a sudden the floor collapses. You have died")
                 return
             elif choice == 'back':
@@ -150,7 +150,7 @@ class rooms:
 
         print ("The ceiling suddenly opens up and a spike trap comes hurtling down killing you.")
         print (death)
-        quit() # on death quit
+        quit()          # on death quit
 
 
 

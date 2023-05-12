@@ -3,20 +3,15 @@ from art import *
 from colorama import Fore, Back
 
 # Create instance of it
-
 gaming = rooms()
-
 # Main
-
 art = text2art("T  1  A  3")
-print (art)
-print (Fore.RED)
-print (Back.GREEN)
+print (art) # prints out T1A3 as ascii art
+print (Fore.RED) #change tex to tred
+print (Back.GREEN) # change background color to green
 # 1. When player opens game welcome to the game
 # 2. Ask player for their name
-
 # 3. Ask player using name if they want to play
-
 # 4. If yes change game to True 
 
 while True:
