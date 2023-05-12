@@ -11,13 +11,18 @@ game = rooms()
 # 2. Ask player for their name
 PLAYER_NAME = input("Welcome to the game! Please enter your name: ")
 # 3. Ask player using name if they want to play
-game_state = input(f'{PLAYER_NAME} would you like to play? (y/n)\n')
+
 # 4. If yes change game to True 
-if game_state == 'y':
-    while True:
-        game.createRoom()
-        break
-    
+while True:
+    game_state = input(f'{PLAYER_NAME}, would you like to play? (y/n)\n')
+    if game_state == 'y':
+            game.createRoom()
+    elif game_state == 'n':
+        print ("Game will now quit.")
+        quit()
+    else:
+        print ("Invalid input please use 'y' or 'n'")
+        
 
     # 4.1. Start loop
         # 4.1.a.If player dies ask to play again
