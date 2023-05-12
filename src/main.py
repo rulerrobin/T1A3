@@ -7,8 +7,8 @@ gaming = rooms()
 # Main
 art = text2art("T  1  A  3")
 print (art) # prints out T1A3 as ascii art
-print (Fore.RED) #change tex to tred
-print (Back.GREEN) # change background color to green
+print (Fore.GREEN) #change tex to tred
+print (Back.BLACK) # change background color to green
 # 1. When player opens game welcome to the game
 # 2. Ask player for their name
 # 3. Ask player using name if they want to play
