@@ -171,7 +171,7 @@ class rooms:
             print('You return to the center of the room')
 
     # MAIN ROOM 
-    def createRoom(self, instance):
+    def createRoom(self):
         while True:
             choice = input("You are in a room filled with torches with a few choices of direction. Do you go 'forward' 'back' 'left' or 'right'?\n")
             if choice == "forward":
