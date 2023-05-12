@@ -113,6 +113,8 @@ I used Notion for my project tracker, the reason for this is because I use Notio
 
 The development plan that I made was heavily focused on planning. I used a kanban style board to build a project management system that allowed to me complete tasks day to day as well as move them/change them if needed.
 
+I also focused on the agile style so I would test and see if something was doable and then make adjustments accordingly. By doing this I adjusted my schedule and plan if I was able to complete things or add things by ensuring that my MVP was functional.
+
 Images of the project management system
 
 **Starting Point**
