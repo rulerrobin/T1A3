@@ -3,6 +3,7 @@ import random
 from art import *
 
 death = text2art("YOU - HAVE - DIED!")
+complete = text2art("COMPLETED!")
 
 # Global available variable for reading through csv file
 random_number = str(random.randint(10000000, 99999999))
@@ -75,8 +76,9 @@ class rooms:
                 print ("You escape the room and return to the previous location")
                 self.scaryRoom()
             elif fight_flee == 'fight' and self.player.weapon:
-                print("YOU HAVE ESCAPED")
-                return
+                print ("YOU HAVE ESCAPED")
+                print (complete)
+                quit()
             elif fight_flee == 'flee' and self.player.weapon:
                 print ("You escape the room and return to the previous location")
                 self.scaryRoom()
@@ -125,7 +127,8 @@ class rooms:
                 # Check if player is correct
                 if user_input == random_number:
                     print('As soon as you enter the numbers doors begin to move and you escape the dungeon!')
-
+                    print (complete)
+                    quit()
                 else:
                     again = input('Sorry, your guess is incorrect. Try again? (y/n)\n')
                     if again.lower() == "n":
