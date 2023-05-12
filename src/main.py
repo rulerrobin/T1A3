@@ -3,26 +3,32 @@ from rooms import rooms, player
 
 # Create instance of it
 
-game = rooms()
+gaming = rooms()
 
 # Main
 
 # 1. When player opens game welcome to the game
 # 2. Ask player for their name
-PLAYER_NAME = input("Welcome to the game! Please enter your name: ")
+
 # 3. Ask player using name if they want to play
 
 # 4. If yes change game to True 
+
 while True:
-    game_state = input(f'{PLAYER_NAME}, would you like to play? (y/n)\n')
-    if game_state == 'y':
-            game.createRoom()
-    elif game_state == 'n':
-        print ("Game will now quit.")
-        quit()
-    else:
-        print ("Invalid input please use 'y' or 'n'")
-        
+    PLAYER_NAME = input("Welcome to the game! Please enter your name: ")
+    while PLAYER_NAME != "":
+            # strip clearing end and start white space
+            game_state = input(f'{PLAYER_NAME.strip()}, would you like to play? (y/n):\n')
+            if game_state == 'y':
+                    gaming.createRoom(gaming)
+            elif game_state == 'n':
+                print ("Game will now quit.")
+                quit()
+            else:
+                print ("Invalid input please use 'y' or 'n'")
+    else: 
+        print ("Invalid input please do not leave blank")
+            
 
     # 4.1. Start loop
         # 4.1.a.If player dies ask to play again
