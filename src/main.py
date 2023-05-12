@@ -16,7 +16,7 @@ print (Back.GREEN) # change background color to green
 
 while True:
     PLAYER_NAME = input("Welcome to the game! Please enter your name: ")
-    while PLAYER_NAME != "":
+    while PLAYER_NAME.strip() != "":
             # strip clearing end and start white space
             game_state = input(f'{PLAYER_NAME.strip()}, would you like to play? (y/n):\n')
             if game_state == 'y':
