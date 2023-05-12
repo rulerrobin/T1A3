@@ -28,25 +28,32 @@ class rooms:
         if not self.player.weapon:
             print("You see the hilt of a blade lodged into a wall")
             pick_up = input("Do you pick up the weapon? (y/n): ")
-            if pick_up == 'y':
+            if pick_up.lower() == 'y':
                 self.player.get_weapon()
                 print("You pick up the weapon and now have a weapon!")
                 self.skeletalRoom()
-            else:
+            elif pick_up.lower() == 'n':
                 print("No")
+            else:
+                print ("Invalid input please use 'y' or 'n'")    
         else:
-            print("You see the hole where the blade used to be. Other than that, it's just a dead end wall")
+            print("You see the hole where the blade used to be. Other than that, it's just a dead end wall. You return to the previous room.")
             self.skeletalRoom()
     
     def skeletalRoom(self):
-        choice = input ("Skeletal Room can choose 'forward' or 'left' or 'back': ")
+        allowed_choices = ['forward', 'left', 'back'] #list of possible choices
+        while True:
+            choice = input("You are in a room filled with skeletons and are able to go 'forward' or 'left' or 'back': ")
+            if choice.lower() in allowed_choices:
+                break
+            print("Invalid input, please choose one of the following: ", allowed_choices)
 
-        if choice == 'forward':
-            print ("The door ahead opens into a dead end wall and go back to the previous room")
+        if choice.lower() == 'forward':
+            print("The door ahead opens into a dead end wall and go back to the previous room")
             self.skeletalRoom()
-        elif choice == 'left':
+        elif choice.lower() == 'left':
             self.weaponRoom()
-        elif choice == 'back':
+        elif choice.lower() == 'back':
             self.createRoom()
 
     def monsterRoom(self):
