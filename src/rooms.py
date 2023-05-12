@@ -93,8 +93,9 @@ class rooms:
             if choice == 'right':
                 self.monsterRoom()
             elif choice == 'left':          # Instant Death
-                print("As you walk into the room you hear crumbling and all of a sudden the floor collapses. You have died")
-                return
+                print ("As you walk into the room you hear crumbling and all of a sudden the floor collapses. You have died")
+                print (death)
+                quit()
             elif choice == 'back':
                 print ("You return to the starting room")
             else:

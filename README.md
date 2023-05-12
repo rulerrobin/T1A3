@@ -1,4 +1,5 @@
 # Basic RPG Adventure!
+
 ***
 ## Repo Link
 ***
@@ -72,6 +73,10 @@ Would be nice:
 
 With each of these features validation code is used in each area to ensure that the user is only inputting valid information, this information could be moving around the map or choosing different options, it can also be for inputting the password for the puzzle into the input to ensure that it is 8 digits and only contains numbers.
 
+**EXTRAS**
+
+For extra's I made it so that the background color of the terminal would become red and the text green just to imitate the the color of older computers when CLI was still being heavily used. In the same way of the theme I used another Package that allowed me to turn text into ASCII art which I used for the intro, death and escape sequences.
+
 ### Flowchart Planning
 
 During the planning phase of the application I used flowchart visualization to figure out how I wanted the code to interact and move between each feature. I did this so I could see what the map looked like and how the code could look in flowchart form.
@@ -84,7 +89,7 @@ The map of the game shows the different rooms, albeit some are differently named
 
 **Main Flow**
 
-Originally I wanted the player to retry if they died which is what version one would have done however for some reason I couldn't remember or figure out how to bring player back to menu so I decided to use the `quit()` function to instant quit the game which I think is more dramatic as I eventually added the ASCII art saying player had died. 
+Originally I wanted the player to retry if they died which is what version one would have done however for some reason I couldn't remember or figure out how to bring player back to menu so I decided to use the `quit()` function to instant quit the game which I think is more dramatic as I eventually added the ASCII art saying player had died. I also made it so that it would quit and print ascii art on completion.
 
 Version 1
 
@@ -121,3 +126,79 @@ Images of the project management system
 **What it looks like in Table format**
 
 ![Table Form](docs/Board%203.PNG)
+
+## Testing
+
+**Pytest test.py**
+There are 2 main tests to complete the application. The first one is a pytest that checks that the text being outputted by the monsterRoom() function is correct. It does this by comparing the text being outputted has the text the pytest has. There was an issue with this test that it actually included the whole function so it does not work comparing the entire text being outputted. However it does show that the expected text being outputted does include what is expected.
+
+When the test is run it does currently have an error that I was unable to fix however the output of the print is actually what is expected.
+
+**Puzzle Room Manual Testing**
+The puzzle room I was unable to complete a pytest that resulted in a pass or fail that sent out an expected output so I decided to create a test that has users do it manually.
+
+The steps to test the solution are as follows:
+1. Run application
+2. Enter name as usual
+3. Enter y to play game as usual
+4. Type 'left' to go to puzzle room
+5. Type 'forward' to get the password
+6. Type 'right' to go to the puzzle door
+7. Input the number given
+8. Result should be escaped and game quits
+
+# User Notes
+***
+**Installation**
+
+1. To use the application you need to have Python3 installed, you have the option of using Python. You are able to do this in your own IDE or through the [Python](https://www.python.org/downloads/) website.
+2. You can then clone the repo and use it yourself.
+
+**Dependencies**
+
+The dependencies themselves are found in the requirements.txt file however I will list them out here. 
+
+From the `python3 -m pip freeze --local` this is what is within my dependencies.
+
+* `art==5.9`
+* `colorama==0.4.6`
+* `exceptiongroup==1.1.1`
+* `iniconfig==2.0.0`
+* `packaging==23.1`
+* `pluggy==1.0.0`
+* `pytest==7.3.1`
+* `tomli==2.0.1`
+
+To install these dependencies in terminal you should be able to use the following `pip install -r requirements.txt` to install them into your directory. 
+
+**Alternatively,** you can also run the bash file by running `bash script_name.sh` in the terminal which checks for the dependencies and installs them for you. It also checks if you have installed Pyhon3. This will also run the `main.py` game file if all is installed.
+
+**Running the File**
+
+Once the above is completed you should be able to run the bash scripting again to execute the main.py game file. However you can also run it manually using `python3 main.py` if you wish to do so.
+
+**System Requirements**
+
+There are no known system requirements for this at the moment except that the dependencies must be installed and the system must be able to run Python3 to be executed successfully.
+
+***
+### **Screenshots**
+
+**On Launch**
+
+![Alt text](docs/SS1.PNG)
+
+**Puzzle Room Completion**
+
+![Alt text](docs/SS2.PNG)
+
+**Death**
+
+![Alt text](docs/SS3.PNG)
+
+***
+## Attribition for Installed Packages
+
+[art 5.9 ](https://pypi.org/project/art/)
+
+[colorama 0.4.6 ](https://pypi.org/project/colorama/)
