@@ -171,7 +171,9 @@ From the `python3 -m pip freeze --local` this is what is within my dependencies.
 
 To install these dependencies in terminal you should be able to use the following `pip install -r requirements.txt` to install them into your directory. 
 
-**Alternatively,** you can also run the bash file by running `bash script_name.sh` in the terminal which checks for the dependencies and installs them for you. It also checks if you have installed Pyhon3. This will also run the `main.py` game file if all is installed.
+**Alternatively,** you can also run the bash file by running `bash script.sh` in the terminal which checks for the dependencies and installs them for you. It also checks if you have installed Pyhon3. This will also run the `main.py` game file if all is installed.
+
+If this does not work try and use this instead `chmod +x script.sh` and then run it by typing it's name in the terminal as `./script.sh`
 
 **Running the File**
 
